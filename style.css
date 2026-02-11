@@ -377,6 +377,89 @@ em {
     flex-wrap: wrap;
 }
 
+/* Books Grid */
+.books-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+    margin-top: var(--spacing-xl);
+}
+
+.book-card {
+    background: var(--color-dark-sand);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(212, 165, 116, 0.2);
+}
+
+.book-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.book-card-cover {
+    width: 100%;
+    aspect-ratio: 2/3;
+    overflow: hidden;
+    background: var(--color-charcoal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.book-card-cover img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.book-card:hover .book-card-cover img {
+    transform: scale(1.05);
+}
+
+.book-card-info {
+    padding: var(--spacing-md);
+}
+
+.book-card-info h4 {
+    font-size: 1.4rem;
+    color: var(--color-sand);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.3;
+}
+
+.book-card-subtitle {
+    font-family: var(--font-serif);
+    font-size: 0.95rem;
+    color: var(--color-text-secondary);
+    font-style: italic;
+    margin-bottom: var(--spacing-sm);
+}
+
+.book-card-tagline {
+    font-family: var(--font-serif);
+    font-size: 0.95rem;
+    color: var(--color-burnt-orange);
+    font-style: italic;
+    margin-bottom: var(--spacing-sm);
+}
+
+.book-card-info p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--color-text-primary);
+    margin-bottom: var(--spacing-md);
+}
+
+.btn-small {
+    padding: 0.625rem 1.5rem;
+    font-size: 0.9rem;
+    width: 100%;
+}
+
 .work-in-progress {
     background: var(--color-dark-sand);
     padding: var(--spacing-lg);
@@ -581,6 +664,11 @@ em {
     .book-links {
         flex-direction: column;
         align-items: center;
+    }
+    
+    .books-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-md);
     }
     
     .social-links {
